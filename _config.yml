@@ -1,9 +1,11 @@
 # Site settings for Kedur — built with Jekyll, hosted free on GitHub Pages
 title: Kedur
-tagline: Mechanical devices & machinery — supply and servicing
+tagline: Mechanical parts, machinery & appliances — supply, sourcing and servicing
 description: >-
-  Kedur supplies and services mechanical devices and machinery across
-  agriculture, engineering and other industries in the UK.
+  Kedur supplies, sources and services mechanical parts, machinery and
+  appliances for agriculture, engineering and industry — valves, actuators,
+  bearings, compressor and electrical parts, sourced worldwide or
+  manufactured to order.
 url: "https://www.kedur.co.uk"
 baseurl: ""
 email: calvin.fernandes@kedur.co.uk
