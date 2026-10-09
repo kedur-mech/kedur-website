@@ -1,0 +1,74 @@
+---
+layout: default
+title: Mechanical Machinery Supply & Servicing
+---
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="eyebrow">Agriculture &middot; Engineering &middot; Industry</p>
+    <h1>Machinery supplied.<br>Machinery serviced.<br><span>Kept running.</span></h1>
+    <p class="lead">Kedur supplies and services mechanical devices and machinery for agriculture, engineering and a wide range of other industries &mdash; so your equipment works when you need it.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#contact">Request a quote</a>
+      <a class="btn btn-ghost" href="#services">Our services</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <p class="eyebrow">What we do</p>
+    <h2>Supply and servicing, across sectors</h2>
+    <div class="cards">
+      {% for s in site.data.services %}
+      <article class="card">
+        <div class="icon">{% include icon.html name=s.icon %}</div>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.summary }}</p>
+        <ul>
+          {% for p in s.points %}<li>{{ p }}</li>{% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="why" class="section section-alt">
+  <div class="container">
+    <p class="eyebrow">Why Kedur</p>
+    <h2>One partner for the equipment you rely on</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="icon">{% include icon.html name="truck" %}</div>
+        <h3>Supply</h3>
+        <p>We source mechanical devices, machinery and parts to your specification.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">{% include icon.html name="wrench" %}</div>
+        <h3>Servicing</h3>
+        <p>Planned maintenance and responsive repairs to keep downtime to a minimum.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">{% include icon.html name="shield" %}</div>
+        <h3>Reliability</h3>
+        <p>Practical advice and dependable support for the long life of your equipment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container contact-inner">
+    <div>
+      <p class="eyebrow">Get in touch</p>
+      <h2>Tell us what you need</h2>
+      <p class="lead">Whether you need a machine supplied, a service scheduled or a breakdown fixed, email us and we'll get back to you promptly.</p>
+    </div>
+    <div class="contact-card">
+      <span class="icon-sm">{% include icon.html name="mail" %}</span>
+      <p class="label">Email</p>
+      <a class="email" href="mailto:{{ site.email }}?subject=Enquiry%20from%20kedur.co.uk">{{ site.email }}</a>
+      <a class="btn" href="mailto:{{ site.email }}?subject=Enquiry%20from%20kedur.co.uk">Send an enquiry</a>
+    </div>
+  </div>
+</section>
