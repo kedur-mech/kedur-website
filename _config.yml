@@ -1,0 +1,24 @@
+# Site settings for Kedur — built with Jekyll, hosted free on GitHub Pages
+title: Kedur
+tagline: Mechanical devices & machinery — supply and servicing
+description: >-
+  Kedur supplies and services mechanical devices and machinery across
+  agriculture, engineering and other industries in the UK.
+url: "https://kedur.co.uk"
+baseurl: ""
+email: calvin.fernandes@kedur.co.uk
+locale: en_GB
+lang: en-GB
+
+# GitHub Pages-supported plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
