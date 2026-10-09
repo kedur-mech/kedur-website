@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-GB' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Kedur home">
+        <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="34" height="34">
+        <span>Kedur</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="{{ '/#services' | relative_url }}">Services</a>
+        <a href="{{ '/#why' | relative_url }}">Why Kedur</a>
+        <a class="btn btn-small" href="{{ '/#contact' | relative_url }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand-footer" href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="28" height="28">
+          <span>Kedur</span>
+        </a>
+        <p>{{ site.tagline }} across agriculture, engineering and other industries.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <p><a href="https://{{ site.url | remove: 'https://' }}">kedur.co.uk</a></p>
+      </div>
+    </div>
+    <div class="container copyright">&copy; {{ 'now' | date: '%Y' }} Kedur. All rights reserved.</div>
+  </footer>
+</body>
+</html>
