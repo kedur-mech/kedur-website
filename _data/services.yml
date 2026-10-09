@@ -1,0 +1,24 @@
+# Edit this file to change the services shown on the website.
+- title: Agriculture
+  icon: tractor
+  summary: Supply and servicing of farm machinery and mechanical equipment — keeping tractors, implements, pumps and processing equipment working through every season.
+  points:
+    - Machinery and parts supply
+    - Scheduled servicing and maintenance
+    - Breakdown repair and fault-finding
+
+- title: Engineering
+  icon: gear
+  summary: Mechanical devices and machinery for workshops, manufacturing and engineering operations, with servicing that minimises downtime.
+  points:
+    - Mechanical components and assemblies
+    - Preventive maintenance programmes
+    - Inspection, repair and refurbishment
+
+- title: Other industries
+  icon: factory
+  summary: From construction and logistics to food processing and facilities, we source and service the mechanical equipment your operation depends on.
+  points:
+    - Equipment sourcing to specification
+    - On-site and workshop servicing
+    - Ongoing support agreements
