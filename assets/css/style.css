@@ -308,4 +308,6 @@ a.topbar-item:hover { color: #fff; }
 @media (max-width: 420px) {
   .process { grid-template-columns: 1fr; }
   .topbar-item { font-size: .8rem; }
+  .topbar-right a.topbar-item { display: none; }
+  .topbar-right { justify-content: flex-end; }
 }
