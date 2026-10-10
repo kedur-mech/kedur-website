@@ -37,7 +37,6 @@ nav: products
     <div class="overview">
       {% for s in site.data.solutions %}
       <a class="overview-item" href="#{{ s.id }}">
-        <span class="num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
         <strong>{{ s.title }}</strong>
         <span class="overview-text">{{ s.short }}</span>
       </a>
@@ -51,7 +50,7 @@ nav: products
   <div class="container service-row{% cycle '', ' reverse' %}">
     <img src="{{ u }}{{ s.img }}{{ q }}&w=900&h=640" alt="{{ s.alt }}" width="900" height="640" loading="lazy">
     <div>
-      <p class="eyebrow">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }} &middot; Service</p>
+      <p class="eyebrow">Service</p>
       <h2>{{ s.title }}</h2>
       <p class="service-intro">{{ s.intro }}</p>
       <ul class="ticks ticks-dark">
