@@ -1,0 +1,158 @@
+---
+layout: default
+title: Contact Us
+description: >-
+  Contact Kedur about custom machinery, automation, process engineering,
+  machinery refurbishment or parts supply. Email us or send an enquiry
+  using the form.
+permalink: /contact/
+nav: contact
+---
+<section class="hero page-hero page-hero-short">
+  <div class="container hero-inner">
+    <p class="eyebrow">Contact us</p>
+    <h1>Let's talk about your project</h1>
+    <p class="lead">Tell us what you need &mdash; a new machine, an automation upgrade, a refurbishment or a hard-to-find part &mdash; and we'll come back to you promptly.</p>
+  </div>
+</section>
+
+<section class="section contact-page">
+  <div class="container contact-layout">
+    <aside class="contact-side">
+      <div class="contact-card">
+        <span class="icon-sm">{% include icon.html name="mail" %}</span>
+        <p class="label">Email us directly</p>
+        <a class="email" href="mailto:{{ site.email }}?subject=Enquiry%20from%20kedur.co.uk">{{ site.email }}</a>
+        <a class="btn" href="mailto:{{ site.email }}?subject=Enquiry%20from%20kedur.co.uk">Send an email</a>
+      </div>
+      <div class="contact-tips">
+        <h3>Help us quote faster</h3>
+        <ul class="ticks ticks-dark">
+          <li>Part numbers, model numbers or nameplate details</li>
+          <li>Drawings, photos or a description of the machine or process</li>
+          <li>Quantities, required delivery date and delivery location</li>
+          <li>Any certification you need with the goods</li>
+        </ul>
+        <p class="small">Got drawings or photos? Email them to us and mention your enquiry.</p>
+      </div>
+    </aside>
+
+    <div class="form-card">
+      <h2>Send us an enquiry</h2>
+      <p class="small">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+      <form id="enquiry-form" action="{{ site.formspree_endpoint }}" method="POST" data-email="{{ site.email }}" novalidate>
+        <input type="hidden" name="_subject" value="New enquiry from kedur.co.uk">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Name *</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-email">Email *</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-service">I'm interested in</label>
+          <select id="f-service" name="interest">
+            <option value="">Please choose&hellip;</option>
+            <optgroup label="Engineering services">
+              {% for s in site.data.solutions %}<option value="{{ s.title }}" data-id="{{ s.id }}">{{ s.title }}</option>
+              {% endfor %}
+            </optgroup>
+            <optgroup label="Parts & supply">
+              <option value="Parts & components supply" data-id="parts">Parts &amp; components supply</option>
+              <option value="Global sourcing / import" data-id="sourcing">Global sourcing / import</option>
+              <option value="Specialist parts made to order" data-id="made-to-order">Specialist parts made to order</option>
+              <option value="Servicing & maintenance" data-id="servicing">Servicing &amp; maintenance</option>
+            </optgroup>
+            <option value="Other">Something else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-message">Your message *</label>
+          <textarea id="f-message" name="message" rows="6" required placeholder="Tell us about the machine, process or part you need help with."></textarea>
+        </div>
+
+        <label class="check"><input type="checkbox" name="consent" value="yes" required> I agree to Kedur using these details to respond to my enquiry. *</label>
+
+        <button class="btn btn-submit" type="submit">Send enquiry</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var form = document.getElementById('enquiry-form');
+  if (!form) return;
+  var status = form.querySelector('.form-status');
+  var select = form.querySelector('#f-service');
+
+  // Pre-select the service when arriving from "Enquire about this service".
+  try {
+    var wanted = new URLSearchParams(location.search).get('service');
+    if (wanted) {
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].getAttribute('data-id') === wanted) { select.selectedIndex = i; break; }
+      }
+    }
+  } catch (e) {}
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    status.className = 'form-status';
+    if (!form.checkValidity()) {
+      status.textContent = 'Please fill in the required fields (name, a valid email, your message) and tick the consent box.';
+      status.classList.add('is-error');
+      var bad = form.querySelector(':invalid'); if (bad) bad.focus();
+      return;
+    }
+    if (form.querySelector('.hp').value) return;
+
+    var action = form.getAttribute('action') || '';
+    var data = new FormData(form);
+
+    // Until the Formspree endpoint is set in _config.yml, fall back to the visitor's email app.
+    if (action.indexOf('formspree.io/f/') === -1 || /REPLACE/i.test(action)) {
+      var lines = ['Name: ' + data.get('name'), 'Company: ' + (data.get('company') || ''), 'Email: ' + data.get('email'),
+                   'Phone: ' + (data.get('phone') || ''), 'Interested in: ' + (data.get('interest') || ''), '', data.get('message')];
+      location.href = 'mailto:' + form.getAttribute('data-email') + '?subject=' + encodeURIComponent('Enquiry from kedur.co.uk') +
+                      '&body=' + encodeURIComponent(lines.join('\n'));
+      status.textContent = 'Opening your email app to send the enquiry…';
+      return;
+    }
+
+    var btn = form.querySelector('.btn-submit');
+    btn.disabled = true; status.textContent = 'Sending…';
+    fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error('send failed');
+        form.reset();
+        status.textContent = 'Thank you — your enquiry has been sent. We’ll be in touch shortly.';
+        status.classList.add('is-ok');
+      })
+      .catch(function () {
+        status.textContent = 'Sorry, something went wrong. Please email us at ' + form.getAttribute('data-email') + '.';
+        status.classList.add('is-error');
+      })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
