@@ -1,0 +1,137 @@
+# Products & Services — one entry per section on /products-services/.
+# id: used for the page anchor (#id) and the contact form "I'm interested in" list.
+# img: Unsplash photo id (free licence) — https://unsplash.com/license
+- id: custom-machinery
+  label: Custom machinery
+  title: Customised Industrial Machinery Design & Manufacturing
+  short: Bespoke machines designed and built around your process and floor space.
+  img: 1717386255773-1e3037c81788
+  alt: Modern automated production line in a factory
+  intro: When standard, off-the-shelf equipment doesn't fit your process, we design and build machinery that does.
+  points:
+    - Design, fabrication and development of bespoke machinery tailored to specific industrial requirements.
+    - Custom-built machines designed to suit available floor space, production layouts and operational constraints.
+    - Integration of mechanical, electrical, pneumatic and automation systems.
+    - Machinery modifications to improve production capacity and efficiency.
+
+- id: automation
+  label: Automation & PLC/HMI
+  title: Industrial Automation & PLC/HMI Integration
+  short: PLC programming, HMI touchscreens and control system upgrades.
+  img: 1780034766295-43db0f2a0fb7
+  alt: Electrical control cabinet with PLC and drives
+  intro: Smarter control for new and existing machines — from a single PLC upgrade to full line automation.
+  points:
+    - PLC programming, automation system development and upgrades.
+    - HMI touchscreen development for real-time machine monitoring and control.
+    - Integration of Siemens, Allen-Bradley, Schneider Electric and other industrial automation platforms.
+    - Automatic and manual control systems, including alarms, safety interlocks and process monitoring.
+
+- id: tank-monitoring
+  label: Tank monitoring
+  title: Radar Level Sensors & Smart Tank Monitoring
+  short: Radar level transmitters and real-time tank, silo and vessel monitoring.
+  img: 1589725971211-7e86a631e2c2
+  alt: Row of industrial storage silos
+  intro: Accurate, real-time level measurement for tanks, silos and vessels — with the alarms and pump control to act on it.
+  points:
+    - Supply, installation and commissioning of industrial radar level transmitters.
+    - Integration of radar sensors with PLC and HMI systems for real-time liquid level indication.
+    - Smart monitoring solutions for storage tanks, industrial silos, water tanks and process vessels.
+    - High-level and low-level alarms, automatic pump operation, filling control and overflow prevention.
+    - Centralised monitoring of multiple tanks through a single HMI display.
+
+- id: refurbishment
+  label: Refurbishment
+  title: Industrial Machinery Refurbishment & Modernisation
+  short: Bring ageing machinery back to life with modern controls and drives.
+  img: 1764114441005-df7e660bc2c8
+  alt: Older industrial lathe in a workshop
+  intro: Get more years and better performance from the equipment you already own, at a fraction of the cost of replacing it.
+  points:
+    - Complete refurbishment and upgrading of ageing industrial machinery.
+    - Replacement of obsolete electrical components, control panels, sensors and automation systems.
+    - Retrofitting existing equipment with modern PLCs, HMIs and variable-frequency drives.
+    - Mechanical improvements to increase production speed, accuracy and operational reliability.
+    - Extending machinery service life while reducing the cost of purchasing new equipment.
+
+- id: process-engineering
+  label: Process & fluids
+  title: Process Engineering & Fluid Handling Systems
+  short: Pumping, transfer and stainless process pipework with smart instrumentation.
+  img: 1513828742140-ccaa28f3eda0
+  alt: Stainless steel process pipework with pumps
+  intro: Reliable liquid handling for food, beverage, dairy and other manufacturing processes.
+  points:
+    - Design and installation of industrial liquid transfer and pumping systems.
+    - Stainless steel process pipework, sanitary fittings, valves and pump installations.
+    - Integration of flowmeters, pressure transmitters, temperature sensors and automated control valves.
+    - Process improvements for food, beverage, dairy and other manufacturing applications.
+
+- id: heating-cooling
+  label: Heating & cooling
+  title: Heating, Cooling & Temperature Control Systems
+  short: Heat exchangers, chilled water and glycol systems with automated control.
+  img: 1513828583688-c52646db42da
+  alt: Industrial pump motor with stainless pipework
+  intro: Precise, energy-efficient temperature control for industrial processes.
+  points:
+    - Customised industrial heating and cooling solutions.
+    - Design and integration of plate heat exchangers, circulation pumps and temperature control systems.
+    - Chilled water, glycol circulation and industrial process cooling applications.
+    - Automated temperature monitoring and control through PLC/HMI systems.
+    - Improvements to existing heating and cooling equipment for better energy efficiency.
+
+- id: cip
+  label: CIP cleaning
+  title: Automated CIP & Process Cleaning Systems
+  short: Clean-in-Place automation, valve sequencing and cleaning cycle control.
+  img: 1779591211635-5e3daafab2a2
+  alt: Stainless steel process vessels
+  intro: Consistent, repeatable and documented cleaning — without the manual effort.
+  points:
+    - Design and integration of Clean-in-Place (CIP) automation.
+    - Automated pump operation, valve sequencing and cleaning cycle control.
+    - Integration of temperature, flow, conductivity and level instrumentation.
+    - Upgrading manual cleaning operations to controlled, automated systems.
+
+- id: electrical-mechanical
+  label: Electrical & mechanical
+  title: Industrial Electrical & Mechanical Engineering
+  short: Control panels, motors and VFDs, stainless fabrication and repairs.
+  img: 1504328345606-18bbc8c9d7d1
+  alt: Welder fabricating metal with sparks
+  intro: Hands-on electrical and mechanical engineering to build, modify and maintain your equipment.
+  points:
+    - Electrical control panel design, assembly, installation and modification.
+    - Motor control, VFD installation and industrial sensor integration.
+    - Mechanical fabrication, stainless steel welding and equipment modification.
+    - Fault finding, equipment repairs and preventative maintenance.
+
+- id: water-energy
+  label: Water & energy
+  title: Water Management & Energy-Efficient Engineering
+  short: Smart water storage, reuse and treatment, plus energy-saving improvements.
+  img: 1533077162801-86490c593afb
+  alt: Aerial view of a water treatment facility
+  intro: Use less water and energy — and spend less on both.
+  points:
+    - Industrial water storage, transfer, monitoring and reuse solutions.
+    - Smart pump control and automatic water management systems.
+    - Integration of water treatment, filtration and UV disinfection equipment.
+    - Development of energy-saving process improvements and heat recovery solutions.
+    - Reducing unnecessary water consumption and improving resource efficiency.
+
+- id: projects
+  label: Complete projects
+  title: Complete Engineering Project Solutions
+  short: From feasibility and design through to installation, commissioning and support.
+  img: 1581094488379-6a10d04c0f04
+  alt: Engineers reviewing technical drawings
+  intro: One partner from the first conversation to long-term support.
+  points:
+    - Technical consultation and feasibility assessments.
+    - Equipment design, component selection and procurement.
+    - Bespoke manufacturing, fabrication and system integration.
+    - On-site installation, programming, testing and commissioning.
+    - Maintenance support, troubleshooting and continuous process optimisation.
