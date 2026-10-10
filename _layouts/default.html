@@ -4,48 +4,131 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
+  <meta name="theme-color" content="#0b2341">
   <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="topbar-item">{% include icon.html name="globe" %} UK-based &middot; Sourcing &amp; delivering worldwide</span>
+      <span class="topbar-right">
+        <a class="topbar-item" href="mailto:{{ site.email }}">{% include icon.html name="mail" %} {{ site.email }}</a>
+        <a class="topbar-cta" href="{{ '/contact/' | relative_url }}">Request a quote</a>
+      </span>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Kedur home">
-        <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="34" height="34">
-        <span>Kedur</span>
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Kedur Ltd home">
+        <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="38" height="38">
+        <span class="brand-text"><span class="brand-name">KEDUR</span><span class="brand-sub">Engineering &middot; Supply &middot; Automation</span></span>
       </a>
-      <nav aria-label="Main">
-        <a href="{{ '/#supply' | relative_url }}">What we supply</a>
-        <a href="{{ '/#sourcing' | relative_url }}">Global sourcing</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="bars" aria-hidden="true"></span><span class="sr-only">Menu</span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Main">
+        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+        <div class="has-drop">
+          <a href="{{ '/products-services/' | relative_url }}"{% if page.nav == 'products' %} aria-current="page"{% endif %}>Products &amp; Services <span class="caret" aria-hidden="true"></span></a>
+          <div class="drop">
+            <div class="drop-col">
+              <p class="drop-title">Engineering services</p>
+              {% for s in site.data.solutions %}<a href="{{ '/products-services/' | relative_url }}#{{ s.id }}">{{ s.label }}</a>{% endfor %}
+            </div>
+            <div class="drop-col">
+              <p class="drop-title">Parts &amp; supply</p>
+              <a href="{{ '/products-services/' | relative_url }}#parts">Parts &amp; components</a>
+              <a href="{{ '/#sourcing' | relative_url }}">Global sourcing</a>
+              <a href="{{ '/#made-to-order' | relative_url }}">Made to order</a>
+              <a href="{{ '/#process' | relative_url }}">How we deliver</a>
+              <a class="drop-all" href="{{ '/products-services/' | relative_url }}">View all products &amp; services &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <a href="{{ '/#sourcing' | relative_url }}">Global Sourcing</a>
         <a href="{{ '/#industries' | relative_url }}">Industries</a>
-        <a class="btn btn-small" href="{{ '/#contact' | relative_url }}">Contact</a>
+        <a class="btn btn-small" href="{{ '/contact/' | relative_url }}"{% if page.nav == 'contact' %} aria-current="page"{% endif %}>Contact Us</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     {{ content }}
   </main>
 
+  {% unless page.nav == 'contact' %}
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <div>
+        <h2>Let's talk about your requirement</h2>
+        <p>Machinery, automation, a refurbishment or a hard-to-find part &mdash; in the UK or overseas, we'll find the right solution.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-light" href="{{ '/contact/' | relative_url }}">Contact us</a>
+        <a class="btn btn-outline-light" href="mailto:{{ site.email }}?subject=Enquiry%20from%20kedur.co.uk">Email us</a>
+      </div>
+    </div>
+  </section>
+  {% endunless %}
+
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div>
+      <div class="footer-about">
         <a class="brand brand-footer" href="{{ '/' | relative_url }}">
-          <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="28" height="28">
-          <span>Kedur</span>
+          <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="34" height="34">
+          <span class="brand-name">KEDUR</span>
         </a>
-        <p>Mechanical parts, machinery and appliances &mdash; supplied, sourced worldwide, manufactured to order and serviced for agriculture, engineering and industry.</p>
+        <p>Industrial engineering, automation and custom machinery &mdash; plus mechanical parts, machinery and appliances sourced worldwide, manufactured to order and delivered internationally.</p>
+      </div>
+      <div>
+        <h3>Products &amp; Services</h3>
+        {% for s in site.data.solutions limit:6 %}<p><a href="{{ '/products-services/' | relative_url }}#{{ s.id }}">{{ s.label }}</a></p>{% endfor %}
+        <p><a href="{{ '/products-services/' | relative_url }}">View all &rarr;</a></p>
+      </div>
+      <div>
+        <h3>Supply</h3>
+        <p><a href="{{ '/products-services/' | relative_url }}#parts">Parts &amp; components</a></p>
+        <p><a href="{{ '/#sourcing' | relative_url }}">Global sourcing</a></p>
+        <p><a href="{{ '/#made-to-order' | relative_url }}">Made to order</a></p>
+        <p><a href="{{ '/#industries' | relative_url }}">Industries</a></p>
       </div>
       <div>
         <h3>Contact</h3>
         <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-        <p><a href="https://{{ site.url | remove: 'https://' }}">www.kedur.co.uk</a></p>
+        <p><a href="{{ '/contact/' | relative_url }}">Enquiry form</a></p>
+        <p>United Kingdom &middot; serving customers worldwide</p>
       </div>
     </div>
-    <div class="container copyright">&copy; {{ 'now' | date: '%Y' }} Kedur. All rights reserved.</div>
+    <div class="container copyright">
+      <span>&copy; {{ 'now' | date: '%Y' }} Kedur Ltd. All rights reserved.</span>
+      <a href="#main">Back to top &uarr;</a>
+    </div>
   </footer>
+
+  <script>
+  (function () {
+    var btn = document.querySelector('.menu-toggle'), nav = document.getElementById('main-nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('open', !open);
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a') && window.matchMedia('(max-width: 960px)').matches) {
+        btn.setAttribute('aria-expanded', 'false'); nav.classList.remove('open');
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
