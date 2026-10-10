@@ -1,31 +1,55 @@
 ---
 layout: default
-title: Mechanical Parts, Machinery & Appliances — Supply, Sourcing & Servicing
+title: Industrial Engineering, Automation & International Parts Supply
 ---
 {%- assign u = "https://images.unsplash.com/photo-" -%}
 {%- assign q = "?auto=format&fit=crop&q=70" -%}
-<section class="hero" style="--hero-img:url('{{ u }}1496247749665-49cf5b1022e9{{ q }}&w=2000')">
+<section class="hero" style="--hero-img:url('{{ u }}1590497008432-598f04441de8{{ q }}&w=2200')">
   <div class="container hero-inner">
-    <p class="eyebrow">Parts &middot; Machinery &middot; Appliances</p>
-    <h1>Machinery supplied.<br>Parts sourced worldwide.<br><span>Kept running.</span></h1>
-    <p class="lead">Kedur supplies, sources and services mechanical parts, machinery and appliances for agriculture, engineering and industry &mdash; from stocked components to hard-to-find spares imported from overseas and specialist parts manufactured to order.</p>
+    <p class="eyebrow">Engineering &middot; Procurement &middot; International supply</p>
+    <h1>Engineering solutions and industrial parts, <span>sourced and delivered worldwide.</span></h1>
+    <p class="lead">Kedur Ltd designs, builds and modernises industrial machinery and automation &mdash; and supplies, sources and services mechanical parts, machinery and appliances for agriculture, engineering and industry, from stocked components to hard-to-find spares imported from overseas and specialist parts manufactured to order.</p>
     <div class="hero-actions">
-      <a class="btn" href="#contact">Request a quote</a>
-      <a class="btn btn-ghost" href="#supply">What we supply</a>
+      <a class="btn" href="{{ '/contact/' | relative_url }}">Request a quote</a>
+      <a class="btn btn-ghost" href="{{ '/products-services/' | relative_url }}">Products &amp; Services</a>
     </div>
   </div>
 </section>
 
 <section class="strip">
   <div class="container strip-grid">
-    <div><strong>UK &amp; international</strong><span>sourcing from manufacturers worldwide</span></div>
-    <div><strong>Made to order</strong><span>specialist parts from drawings or samples</span></div>
-    <div><strong>Certified</strong><span>manufacturer certification on request</span></div>
-    <div><strong>Fast dispatch</strong><span>stock items shipped promptly</span></div>
+    <div>{% include icon.html name="globe" %}<strong>UK &amp; international</strong><span>Sourcing from manufacturers worldwide</span></div>
+    <div>{% include icon.html name="gear" %}<strong>Made to order</strong><span>Specialist parts from drawings or samples</span></div>
+    <div>{% include icon.html name="check" %}<strong>Certified</strong><span>Manufacturer certification on request</span></div>
+    <div>{% include icon.html name="plane" %}<strong>Delivered worldwide</strong><span>Export, shipping &amp; documentation handled</span></div>
   </div>
 </section>
 
-<section id="supply" class="section">
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Products &amp; Services</p>
+        <h2>Engineering, automation and supply under one roof</h2>
+      </div>
+      <a class="btn btn-outline" href="{{ '/products-services/' | relative_url }}">View all products &amp; services</a>
+    </div>
+    <div class="service-tiles">
+      {% for s in site.data.solutions %}
+      <a class="service-tile" href="{{ '/products-services/' | relative_url }}#{{ s.id }}">
+        <img src="{{ u }}{{ s.img }}{{ q }}&w=560&h=360" alt="" width="560" height="360" loading="lazy">
+        <span class="tile-body">
+          <strong>{{ s.title }}</strong>
+          <span>{{ s.short }}</span>
+          <span class="tile-more">Find out more &rarr;</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="supply" class="section section-alt">
   <div class="container">
     <p class="eyebrow">What we supply</p>
     <h2>Parts, machinery &amp; components</h2>
@@ -47,7 +71,7 @@ title: Mechanical Parts, Machinery & Appliances — Supply, Sourcing & Servicing
 <section id="sourcing" class="section section-dark">
   <div class="container">
     <div class="feature-row">
-      <img src="{{ u }}1590497008432-598f04441de8{{ q }}&w=900&h=640" alt="Container port with cranes and stacked shipping containers" width="900" height="640" loading="lazy">
+      <img src="{{ u }}1578575437130-527eed3abbec{{ q }}&w=900&h=640" alt="Cargo ships docked at a container port" width="900" height="640" loading="lazy">
       <div>
         <p class="eyebrow">Global sourcing</p>
         <h2>Parts and machinery from around the world</h2>
@@ -60,7 +84,7 @@ title: Mechanical Parts, Machinery & Appliances — Supply, Sourcing & Servicing
         </ul>
       </div>
     </div>
-    <div class="feature-row reverse">
+    <div id="made-to-order" class="feature-row reverse">
       <img src="{{ u }}1666634157070-6fd830fb5672{{ q }}&w=900&h=640" alt="Metal part being machined on a lathe" width="900" height="640" loading="lazy">
       <div>
         <p class="eyebrow">Made to order</p>
@@ -72,9 +96,25 @@ title: Mechanical Parts, Machinery & Appliances — Supply, Sourcing & Servicing
           <li>Materials and tolerances to your specification</li>
           <li>One-offs, prototypes and repeat batches</li>
         </ul>
-        <a class="btn" href="#contact">Send us your drawing</a>
+        <a class="btn" href="{{ '/contact/' | relative_url }}?service=made-to-order">Send us your drawing</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="process" class="section">
+  <div class="container">
+    <p class="eyebrow">How we deliver</p>
+    <h2>From enquiry to delivery &mdash; anywhere</h2>
+    <p class="lead">One accountable partner managing procurement, quality and logistics, so you receive the right part or machine, with the right paperwork, on time.</p>
+    <ol class="process">
+      <li><span class="step-icon">{% include icon.html name="doc" %}</span><strong>Enquiry</strong><span>Share a part number, drawing, photo or specification.</span></li>
+      <li><span class="step-icon">{% include icon.html name="search" %}</span><strong>Source</strong><span>We identify the best manufacturer or supplier, in the UK or overseas.</span></li>
+      <li><span class="step-icon">{% include icon.html name="truck" %}</span><strong>Quote &amp; procure</strong><span>Clear ex-works or delivered pricing and lead time, then we place and expedite the order.</span></li>
+      <li><span class="step-icon">{% include icon.html name="check" %}</span><strong>Inspect &amp; certify</strong><span>Goods checked against your order, with manufacturer certification on request.</span></li>
+      <li><span class="step-icon">{% include icon.html name="plane" %}</span><strong>Ship worldwide</strong><span>Packing, export documentation and delivery to your site.</span></li>
+      <li><span class="step-icon">{% include icon.html name="wrench" %}</span><strong>Support</strong><span>Installation, commissioning, servicing and spares for the long term.</span></li>
+    </ol>
   </div>
 </section>
 
@@ -105,7 +145,7 @@ title: Mechanical Parts, Machinery & Appliances — Supply, Sourcing & Servicing
     <h2>One partner for the equipment you rely on</h2>
     <div class="features">
       <div class="feature">
-        <div class="icon">{% include icon.html name="truck" %}</div>
+        <div class="icon">{% include icon.html name="globe" %}</div>
         <h3>Supply &amp; sourcing</h3>
         <p>We source mechanical devices, machinery and parts to your specification &mdash; in the UK or from overseas.</p>
       </div>
@@ -124,22 +164,6 @@ title: Mechanical Parts, Machinery & Appliances — Supply, Sourcing & Servicing
         <h3>Quality assured</h3>
         <p>Genuine parts with manufacturer certification available, and practical advice on compatibility.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section contact">
-  <div class="container contact-inner">
-    <div>
-      <p class="eyebrow">Get in touch</p>
-      <h2>Tell us what you need</h2>
-      <p class="lead">Send us a part number, a drawing, a photo of the part or a description of the machine &mdash; we'll come back with availability, lead time and a clear quote.</p>
-    </div>
-    <div class="contact-card">
-      <span class="icon-sm">{% include icon.html name="mail" %}</span>
-      <p class="label">Email</p>
-      <a class="email" href="mailto:{{ site.email }}?subject=Enquiry%20from%20kedur.co.uk">{{ site.email }}</a>
-      <a class="btn" href="mailto:{{ site.email }}?subject=Quote%20request%20from%20kedur.co.uk">Request a quote</a>
     </div>
   </div>
 </section>
