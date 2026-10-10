@@ -185,7 +185,7 @@ a.topbar-item:hover { color: #fff; }
 
 /* Products & Services page */
 .subnav { position: sticky; top: 76px; z-index: 10; background: #fff; border-bottom: 1px solid var(--line); }
-.subnav-inner { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; padding-bottom: 10px; scrollbar-width: thin; }
+.subnav-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding-top: 12px; padding-bottom: 12px; }
 .subnav a { flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); text-decoration: none; font-size: .88rem; font-weight: 500; white-space: nowrap; }
 .subnav a:hover { border-color: var(--accent); color: var(--accent); }
 .subnav a span { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--navy); color: #fff; font-size: .7rem; font-weight: 700; }
@@ -283,7 +283,7 @@ a.topbar-item:hover { color: #fff; }
   .topbar-inner > .topbar-item { display: none; }
   .topbar-right { width: 100%; justify-content: space-between; }
   .nav { height: 66px; }
-  .subnav { top: 66px; }
+  .subnav { position: static; }
   html { scroll-padding-top: 130px; }
   .brand-sub { display: none; }
   .hero { padding: 64px 0 72px; }
