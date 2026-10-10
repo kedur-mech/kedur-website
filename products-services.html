@@ -1,0 +1,109 @@
+---
+layout: default
+title: Products & Services — Industrial Engineering, Automation & Custom Machinery
+description: >-
+  Kedur's products and services: custom industrial machinery, PLC/HMI automation,
+  radar level and tank monitoring, machinery refurbishment, process and fluid
+  handling, heating and cooling, CIP, electrical and mechanical engineering,
+  water and energy efficiency, and complete engineering projects.
+permalink: /products-services/
+nav: products
+---
+{%- assign u = "https://images.unsplash.com/photo-" -%}
+{%- assign q = "?auto=format&fit=crop&q=70" -%}
+<section class="hero page-hero" style="--hero-img:url('{{ u }}1647427060118-4911c9821b82{{ q }}&w=2000')">
+  <div class="container hero-inner">
+    <p class="eyebrow">Industrial Engineering &middot; Automation &middot; Custom Machinery &middot; Smart Manufacturing</p>
+    <h1>Products &amp; Services</h1>
+    <p class="lead">Innovative, customised and cost-effective engineering solutions that improve efficiency, productivity, reliability and operational performance &mdash; from designing and building new industrial machinery to modernising existing equipment with advanced automation and smart control technologies.</p>
+    <div class="hero-actions">
+      <a class="btn" href="{{ '/contact/' | relative_url }}">Discuss your project</a>
+      <a class="btn btn-ghost" href="#parts">Parts &amp; components we supply</a>
+    </div>
+  </div>
+</section>
+
+<nav class="subnav" aria-label="Products and services">
+  <div class="container subnav-inner">
+    {% for s in site.data.solutions %}<a href="#{{ s.id }}"><span>{{ forloop.index }}</span>{{ s.label }}</a>{% endfor %}
+    <a href="#parts"><span>+</span>Parts supply</a>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Our products &amp; services</p>
+    <h2>Engineering solutions, start to finish</h2>
+    <div class="overview">
+      {% for s in site.data.solutions %}
+      <a class="overview-item" href="#{{ s.id }}">
+        <span class="num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+        <strong>{{ s.title }}</strong>
+        <span class="overview-text">{{ s.short }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% for s in site.data.solutions %}
+<section id="{{ s.id }}" class="service{% cycle '', ' service-alt' %}">
+  <div class="container service-row{% cycle '', ' reverse' %}">
+    <img src="{{ u }}{{ s.img }}{{ q }}&w=900&h=640" alt="{{ s.alt }}" width="900" height="640" loading="lazy">
+    <div>
+      <p class="eyebrow">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }} &middot; Service</p>
+      <h2>{{ s.title }}</h2>
+      <p class="service-intro">{{ s.intro }}</p>
+      <ul class="ticks ticks-dark">
+        {% for pt in s.points %}<li>{{ pt }}</li>{% endfor %}
+      </ul>
+      <a class="btn" href="{{ '/contact/' | relative_url }}?service={{ s.id }}">Enquire about this service</a>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+<section id="parts" class="section section-alt">
+  <div class="container">
+    <p class="eyebrow">Parts &amp; components we supply</p>
+    <h2>Parts, machinery &amp; components</h2>
+    <p class="lead">Alongside our engineering services, we supply the mechanical, electrical and process parts your equipment depends on &mdash; sourced in the UK or from overseas, or manufactured to order.</p>
+    <div class="products">
+      {% for p in site.data.products %}
+      <article class="product">
+        <img src="{{ u }}{{ p.img }}{{ q }}&w=640&h=420" alt="{{ p.alt }}" width="640" height="420" loading="lazy">
+        <div class="product-body">
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.text }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="more"><a href="{{ '/#sourcing' | relative_url }}">Global sourcing and made-to-order parts &rarr;</a></p>
+  </div>
+</section>
+
+<section id="why-choose" class="section">
+  <div class="container">
+    <p class="eyebrow">Why choose Kedur</p>
+    <h2>Practical engineering, built around you</h2>
+    <p class="lead">We deliver practical engineering solutions that meet each customer's specific requirements, rather than relying solely on standard, off-the-shelf machinery.</p>
+    <div class="pillars">
+      <div><h3>Customisation</h3><p>Engineering solutions designed around your production needs, available space and budget.</p></div>
+      <div><h3>Modernisation</h3><p>Transforming older machinery into efficient, automated production equipment.</p></div>
+      <div><h3>Productivity</h3><p>Reducing downtime, improving performance and increasing production capacity.</p></div>
+      <div><h3>Smart technology</h3><p>Integrating intelligent sensors, PLCs, HMIs and automated control systems.</p></div>
+      <div><h3>Sustainability</h3><p>Improving energy efficiency, reducing water wastage and extending equipment life.</p></div>
+      <div><h3>Cost efficiency</h3><p>Maximising the performance of existing assets while minimising unnecessary capital expenditure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section commitment">
+  <div class="container narrow-wide">
+    <p class="eyebrow">Our commitment</p>
+    <blockquote>Engineering Smarter Solutions. Modernising Industries. Maximising Productivity.</blockquote>
+    <p>We believe that every industrial challenge presents an opportunity for innovation. Whether you need a completely new customised machine, advanced automation, intelligent process monitoring or an upgrade to existing equipment, we aim to deliver reliable, efficient and future-ready engineering solutions.</p>
+    <p class="tagline">Kedur Ltd &mdash; your partner in industrial engineering, automation &amp; innovation.</p>
+  </div>
+</section>
