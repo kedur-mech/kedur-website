@@ -9,6 +9,10 @@ description: >-
 url: "https://www.kedur.co.uk"
 baseurl: ""
 email: calvin.fernandes@kedur.co.uk
+
+# Contact form: paste your Formspree form endpoint here, e.g. https://formspree.io/f/abcdwxyz
+# Until it is set, the form opens the visitor's email app instead.
+formspree_endpoint: "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
 locale: en_GB
 lang: en-GB
 
