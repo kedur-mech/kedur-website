@@ -25,8 +25,8 @@ nav: products
 
 <nav class="subnav" aria-label="Products and services">
   <div class="container subnav-inner">
-    {% for s in site.data.solutions %}<a href="#{{ s.id }}"><span>{{ forloop.index }}</span>{{ s.label }}</a>{% endfor %}
-    <a href="#parts"><span>+</span>Parts supply</a>
+    {% for s in site.data.solutions %}<a href="#{{ s.id }}">{{ s.label }}</a>{% endfor %}
+    <a href="#parts">Parts supply</a>
   </div>
 </nav>
 
